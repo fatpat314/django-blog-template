@@ -1,1 +1,1 @@
-web: gunicord lizblog.wsgi
+web: gunicorn lizblog.wsgi
