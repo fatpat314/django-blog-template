@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    'blog',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,15 @@ USE_TZ = True
 # TEMPLATES_DIRS = os.path.join(BASE_DIR,'templates')
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+AWS_ACCESS_KEY_ID = 'AKIASWGQ7CCAPIPFJOJQ'
+AWS_SECRET_KEY_ID = 'kDHuZN/A7efVU8Mz8uZWFTBw8UZYTLYFepQzwv2f'
+AWS_STORAGE_BUCKET_NAME = 'liz-blog-bucket'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_FILE_STORAGE = 'storage.backends.s3boto3.S3Boto3Storage'

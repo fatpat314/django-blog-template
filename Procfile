@@ -1,0 +1,1 @@
+web: gunicord lizblog.wsgi
