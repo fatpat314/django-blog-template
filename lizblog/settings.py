@@ -29,7 +29,7 @@ SECRET_KEY = '+gpt%-@y_#4vl1o^y90c+c5^1+g5erb^$d^+@%-k!2qe36^rmh'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://elucidate-the-fates.herokuapp.com/", 'localhost']
 
 
 # Application definition
